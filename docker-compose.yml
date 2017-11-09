@@ -1,0 +1,13 @@
+version: '2'
+services:
+  apigateway:
+    container_name: apigateway
+    image: golang
+    #command: go get github.com/pilu/fresh && fresh && go run play.go
+    volumes:
+      - ./:/go/src/github.com/user/api-gateway/
+      - ./go/src:/go/src
+    working_dir: /go/src/github.com/user/api-gateway/
+    ports:
+      - 9090:9090
+    tty: true

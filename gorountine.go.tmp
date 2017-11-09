@@ -1,0 +1,21 @@
+package main
+import (
+  "fmt"
+)
+func main() {
+     go three()
+     d := make (chan string)
+     go second(d)
+     fmt.Printf(<-d)
+     first()
+}
+
+func first() {
+  fmt.Println("1st")
+}
+func second(d chan string) {
+  d <- fmt.Sprintf("2nd \n")
+}
+func three(){
+    fmt.Println("3rd")
+}
