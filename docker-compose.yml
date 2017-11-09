@@ -1,12 +1,12 @@
 version: '2'
 services:
   apigateway:
-    container_name: apigateway
+    container_name: playgo
     image: golang
     volumes:
-      - ./:/go/src/github.com/user/api-gateway/
+      - ./:/go/src/github.com/user/playgo/
       - ./go/src:/go/src
-    working_dir: /go/src/github.com/user/api-gateway/
+    working_dir: /go/src/github.com/user/playgo/
     ports:
       - 9090:9090
     tty: true
